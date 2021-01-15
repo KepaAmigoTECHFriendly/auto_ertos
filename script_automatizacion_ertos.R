@@ -6,7 +6,7 @@ library(DBI)
 library(dplyr)
 library(lubridate)
 
-mes_url <- month(Sys.Date())
+mes_url <- ifelse(month(Sys.Date()) == 1,12,(month(Sys.Date())-1))
 if(mes_url<10){
   url <- paste("observatoritreball.gencat.cat/web/.content/generic/documents/treball/estadistica/regulacio_d_ocupacio/2020/arxius/regulacio_ocupacio-20200",mes_url,".xlsx",sep = "")
 }else{
